@@ -1,0 +1,206 @@
+{
+  "main": {
+    "id": "04ed014eebad131f",
+    "type": "split",
+    "children": [
+      {
+        "id": "84a1e5db43ba4f82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b18752573f874a77",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "53adaded3afa1975",
+    "type": "split",
+    "children": [
+      {
+        "id": "bfaff8b7003407db",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9996368403998d63",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d47be64b5c4247b0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "ribb",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d2e4e2a574dac729",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fcca40e875df50bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "edce05a0308f339e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65f85a9c01b88b01",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "JUnit5/JUnit Mockito.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for JUnit Mockito"
+            }
+          },
+          {
+            "id": "8e4b64805c593164",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "JUnit5/JUnit Mockito.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from JUnit Mockito"
+            }
+          },
+          {
+            "id": "2f3a2edd7963baef",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f1f22b7896fcba37",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "323677a7adacaa1c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "JUnit5/Untitled 1.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Untitled 1"
+            }
+          },
+          {
+            "id": "5a8a0679796f102c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "b18752573f874a77",
+  "lastOpenFiles": [
+    "JUnit5/JUnit Annotationa & Assertions.md",
+    "JUnit5/name.md",
+    "JUnit5/JUnit Mockito.md",
+    "Welcome.md",
+    "JUnit5/Untitled 1.md",
+    "JUnit5/Untitled.md",
+    "JUnit5/Annotations.canvas",
+    "2026-03-04.md",
+    "Untitled.base",
+    "JUnit5"
+  ]
+}
