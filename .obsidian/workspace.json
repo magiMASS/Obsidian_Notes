@@ -164,9 +164,19 @@
               "icon": "lucide-list",
               "title": "Outline of name"
             }
+          },
+          {
+            "id": "a951ef461d5c603b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",

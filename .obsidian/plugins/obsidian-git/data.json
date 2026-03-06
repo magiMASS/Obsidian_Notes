@@ -38,7 +38,7 @@
   "hunks": {
     "showSigns": false,
     "hunkCommands": false,
-    "statusBar": "monochrome"
+    "statusBar": "colored"
   },
   "lineAuthor": {
     "show": false,
