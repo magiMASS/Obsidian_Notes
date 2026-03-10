@@ -54,11 +54,11 @@ public void testingBefore(){
 ***1. Mocking Objects
 		@Mock -> will take a copy of the object and create a fake object
 	Example 
-			List<String> list = Mockito.mock(List.class);
+			List<> list = Mockito.mock(List.class);
 			list.add("Hello");
 			verify(list).add("Hello");
+		
 2. Stubbing Method Calls
 			-> Defines what a mocked method should return
 	Example
 				when(userService.getUserName()).thenReturn("John");
-3. 
