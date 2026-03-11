@@ -58,7 +58,8 @@ public void testingBefore(){
 			list.add("Hello");
 			verify(list).add("Hello");
 		
-2. Stubbing Method Calls
+ ***2. Stubbing Method Calls
 			-> Defines what a mocked method should return
 	Example
 				when(userService.getUserName()).thenReturn("John");
+				when(service.getData()).thenReturn("A", "B", "C");  // returns in order calls 1st call "A" , 2nd call "B", 3rd onwards "C"
