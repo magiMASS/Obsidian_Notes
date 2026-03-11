@@ -63,3 +63,9 @@ public void testingBefore(){
 	Example
 				when(userService.getUserName()).thenReturn("John");
 				when(service.getData()).thenReturn("A", "B", "C");  // returns in order calls 1st call "A" , 2nd call "B", 3rd onwards "C"
+				
+***3. Verifying Method Calls
+			-> verify the method 
+	
+			
+
