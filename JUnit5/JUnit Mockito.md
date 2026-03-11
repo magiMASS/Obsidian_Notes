@@ -65,7 +65,10 @@ public void testingBefore(){
 				when(service.getData()).thenReturn("A", "B", "C");  // returns in order calls 1st call "A" , 2nd call "B", 3rd onwards "C"
 				
 ***3. Verifying Method Calls
-			-> verify the method 
-	
+			-> verify the method has been called
+	Example 
+				Mockito.verify(mockCrypto,atLeastOnce()).encryptSign(Mockito.anyString());  
+				Mockito.verify(mockCrypto,atMost(5)).encryptSign(Mockito.anyString());  
+				Mockito.verify(mockCrypto,times(4)).encryptSign(Mockito.anyString());
 			
 
