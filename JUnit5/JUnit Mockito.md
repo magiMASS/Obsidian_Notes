@@ -75,4 +75,14 @@ public void testingBefore(){
 			-> Used when the argument value is not important.
 	Example 
 				when(repo.findUser(anyInt())).thenReturn(user);
+Common matchers:
 
+- `any()`
+
+- `anyString()`
+
+- `anyInt()`
+
+- `eq()`
+
+- `contains()`
