@@ -70,5 +70,9 @@ public void testingBefore(){
 				Mockito.verify(mockCrypto,atLeastOnce()).encryptSign(Mockito.anyString());  
 				Mockito.verify(mockCrypto,atMost(5)).encryptSign(Mockito.anyString());  
 				Mockito.verify(mockCrypto,times(4)).encryptSign(Mockito.anyString());
-			
+
+***4. Argument Matchers
+			-> Used when the argument value is not important.
+	Example 
+				when(repo.findUser(anyInt())).thenReturn(user);
 
