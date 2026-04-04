@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "biosdk-deployment/biosdk app deployment sample.md",
+                "file": "biosdk-deployment/start sh.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "biosdk app deployment sample"
+              "title": "start sh"
             }
           }
         ]
@@ -196,10 +196,10 @@
   },
   "active": "b18752573f874a77",
   "lastOpenFiles": [
+    "biosdk-deployment/idemia license build Dockerfile.md",
     "biosdk-deployment/biosdk-Dockerfile.md",
     "biosdk-deployment/Biosdk Deployment on OpenShift.md",
     "biosdk-deployment/biosdk app deployment sample.md",
-    "biosdk-deployment/idemia license build Dockerfile.md",
     "biosdk-deployment/start sh.md",
     "Untitled.md",
     "biosdk-deployment",
