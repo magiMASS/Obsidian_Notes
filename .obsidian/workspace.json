@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ribb",
+                "query": "tag:#Artifactory",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -196,10 +196,10 @@
   },
   "active": "2c5cfe3cacc58828",
   "lastOpenFiles": [
-    "code obfuscation/Maven Setup Guide.md",
-    "code obfuscation/Code Obfuscation.md",
     "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
+    "code obfuscation/Code Obfuscation.md",
     "code obfuscation/Maven_Setup_Guide_Obsidian_Styled.md",
+    "code obfuscation/Maven Setup Guide.md",
     "code obfuscation/Maven_Setup_Guide.md",
     "code obfuscation/Maven_Setup_Guide_Obsidian_Styled (1).md",
     "maven setup for dev and client systems.md",
