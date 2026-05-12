@@ -41,7 +41,7 @@ Ensure the following before deployment:
 # Step 1 : Create PersistentVolumeClaim
 
 
-```
+```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 
@@ -62,7 +62,7 @@ spec:
 
 
 # Step 3: Create Nexus Deployment
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 
@@ -120,7 +120,7 @@ spec:
 
 # Step 6: Create Service
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 
@@ -141,78 +141,10 @@ spec:
 ```
 
 
+# Step 7: Create Route
 
-
-```
+```yaml
 kind: Route
-
-apiVersion: route.openshift.io/v1
-
-metadata:
-
-  name: artifactory-http
-
-  namespace: mosip
-
-  uid: 2ee0b4e7-b7c7-42c6-99ec-403951439be7
-
-  resourceVersion: '1012834919'
-
-  creationTimestamp: '2026-01-13T11:56:23Z'
-
-  annotations:
-
-    openshift.io/host.generated: 'true'
-
-  managedFields:
-
-    - manager: oc
-
-      operation: Update
-
-      apiVersion: route.openshift.io/v1
-
-      time: '2026-01-13T11:56:23Z'
-
-      fieldsType: FieldsV1
-
-      fieldsV1:
-
-        'f:spec':
-
-          'f:port':
-
-            .: {}
-
-            'f:targetPort': {}
-
-          'f:to':
-
-            'f:kind': {}
-
-            'f:name': {}
-
-            'f:weight': {}
-
-          'f:wildcardPolicy': {}
-
-    - manager: openshift-router
-
-      operation: Update
-
-      apiVersion: route.openshift.io/v1
-
-      time: '2026-01-13T11:56:23Z'
-
-      fieldsType: FieldsV1
-
-      fieldsV1:
-
-        'f:status':
-
-          'f:ingress': {}
-
-      subresource: status
 
 spec:
 

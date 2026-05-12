@@ -10,7 +10,7 @@ For deployment of nexus artifactory service  refer here -> [[Deployment for Arti
 
 # core project build pom
 
-```
+```xml
 	<build>
 		<plugins>
 			<plugin>
