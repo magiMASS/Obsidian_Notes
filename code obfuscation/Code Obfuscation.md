@@ -7,4 +7,4 @@ To setup the maven repo for both clients and devs Refer to this document ->[[Mav
 
 
 
-### Artifactory deployment
+### Artifactory deployment (NEXUS)
