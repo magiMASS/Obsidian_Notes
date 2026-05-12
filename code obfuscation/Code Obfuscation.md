@@ -8,3 +8,6 @@ To setup the maven repo for both clients and devs Refer to this document ->[[Mav
 
 
 ### Artifactory deployment (NEXUS)
+
+
+For deployment of nexus artifactory service  refer here -> [[Deployment for Artifactory]]

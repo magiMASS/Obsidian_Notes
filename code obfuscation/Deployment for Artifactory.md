@@ -38,7 +38,7 @@ Ensure the following before deployment:
 ---
 
 # Step 1: Login to OpenShift
-# Step 2 : Create PersistentVolumeClaim
+# Step 1 : Create PersistentVolumeClaim
 
 
 ```
@@ -61,11 +61,84 @@ spec:
 
 
 
+# Step 3: Create Nexus Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: artifactory
+  namespace: mosip
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: artifactory
+
+  template:
+    metadata:
+      labels:
+        app: artifactory
+
+    spec:
+      securityContext:
+        fsGroup: 200
+
+      volumes:
+        - name: nexus-data
+          persistentVolumeClaim:
+            claimName: nexus-data
+
+      containers:
+        - name: artifactory
+          image: sonatype/nexus3:3.88.0
+
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+
+          volumeMounts:
+            - name: nexus-data
+              mountPath: /nexus-data
+
+          imagePullPolicy: Always
+
+      restartPolicy: Always
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+```
+
+
+# Step 6: Create Service
+
+```
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: artifactory-service
+  namespace: mosip
+
+spec:
+  selector:
+    app: artifactory
+
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+
+  type: ClusterIP
+```
 
 
 
-
-
-
-
-;
