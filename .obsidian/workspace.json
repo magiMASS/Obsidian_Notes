@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a7256e6e72c323db",
+        "id": "3d464e0b6e5d432b",
         "type": "tabs",
         "children": [
           {
-            "id": "397be4b4c17b518d",
+            "id": "5ceb891db721a33e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -194,12 +194,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "397be4b4c17b518d",
+  "active": "5ceb891db721a33e",
   "lastOpenFiles": [
+    "code obfuscation/Code Obfuscation.md",
     "code obfuscation/Maven_Setup_Guide.md",
     "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
+    "ok.md",
     "code obfuscation/Deployment for Artifactory.md",
-    "code obfuscation/Code Obfuscation.md",
+    "biosdk-deployment/biosdk app deployment sample.md",
     "Nexus3 Deployment Guide on Red Hat OpenShift.md",
     "maven setup for dev and client systems.md",
     "code obfuscation/Maven_Setup_Guide_Obsidian_Styled.md",
@@ -220,7 +222,6 @@
     "biosdk-deployment/idemia license build Dockerfile.md",
     "biosdk-deployment/biosdk-Dockerfile.md",
     "biosdk-deployment/Biosdk Deployment on OpenShift.md",
-    "biosdk-deployment/biosdk app deployment sample.md",
     "biosdk-deployment",
     "JUnit5/name.md",
     "Welcome.md",
