@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "code obfuscation/Code Obfuscation.md",
+                "file": "opencrvs deployment/deployment procedure document.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Code Obfuscation"
+              "title": "deployment procedure document"
             }
           }
         ]
@@ -196,8 +196,11 @@
   },
   "active": "5ceb891db721a33e",
   "lastOpenFiles": [
-    "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
     "code obfuscation/Code Obfuscation.md",
+    "opencrvs deployment/deployment procedure document.md",
+    "opencrvs deployment",
+    "Untitled 1",
+    "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
     "code obfuscation/Maven_Setup_Guide.md",
     "ok.md",
     "code obfuscation/Deployment for Artifactory.md",
