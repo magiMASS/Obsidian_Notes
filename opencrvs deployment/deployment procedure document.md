@@ -225,3 +225,51 @@ create partner  mpartner-default-opencrvs
 # Step: github config update
 
 # Step: Db creation and updates
+
+***Create data base : mosip_opencrvs
+Create schema : opencrvs
+Create Table : birth_transactions, uin_partner_token***
+
+
+```SQL
+-- opencrvs.birth_transactions definition
+
+-- Drop table
+
+-- DROP TABLE opencrvs.birth_transactions;
+
+CREATE TABLE opencrvs.birth_transactions (
+	txn_id varchar(64) NOT NULL,
+	rid varchar(64) NULL,
+	status varchar(2048) NULL,
+	cr_by varchar(256) NOT NULL,
+	cr_dtimes timestamp NOT NULL,
+	upd_by varchar(256) NULL,
+	upd_dtimes timestamp NULL,
+	is_deleted bool NULL DEFAULT false,
+	del_dtimes timestamp NULL,
+	access_token varchar NULL,
+	opencrvs_brn varchar NULL,
+	CONSTRAINT pk_birth_txn_id PRIMARY KEY (txn_id)
+);
+
+-- opencrvs.uin_partner_token definition
+
+-- Drop table
+
+-- DROP TABLE opencrvs.uin_partner_token;
+
+CREATE TABLE opencrvs.uin_partner_token (
+	uin varchar(50) NOT NULL,
+	partner_token varchar(500) NULL,
+	cr_by varchar(50) NULL,
+	cr_dtimes timestamp NULL,
+	upd_by varchar(50) NULL,
+	upd_dtimes timestamp NULL,
+	partner_name varchar(56) NULL,
+	CONSTRAINT uin_partner_token_pkey PRIMARY KEY (uin)
+);
+
+```
+
+
