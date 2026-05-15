@@ -217,8 +217,11 @@ echo "👉 Root → Intermediate → Partner chain is valid"
 
 ***Opencrvs user and client create
 
-# Step: upload credential cert to PMS
+# Step:  PMS create partner & policy 
 
+create partner  mpartner-default-opencrvs
 ***Upload the partner cert for iopencrvs mosip mediatior to pms
 
-# Step: github config update 
+# Step: github config update
+
+# Step: Db creation and updates
