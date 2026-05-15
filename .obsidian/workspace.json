@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Artifactory",
+                "query": "tag:#Allowed",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -194,7 +195,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5ceb891db721a33e",
+  "active": "d47be64b5c4247b0",
   "lastOpenFiles": [
     "code obfuscation/Code Obfuscation.md",
     "opencrvs deployment/deployment procedure document.md",

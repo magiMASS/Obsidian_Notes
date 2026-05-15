@@ -1,21 +1,78 @@
 
+# Step1: Db creation and updates
 
-# Step1: Openshift Deployment
-
-***packet receiver stage
-packet uploader stage
-credential request generator
-uin generator stage
-opencrvs mediator
-regproc opencrvs stage***
+***Create data base : mosip_opencrvs
+Create schema : opencrvs
+Create Table : birth_transactions, uin_partner_token***
 
 
+```SQL
+-- opencrvs.birth_transactions definition
 
-# Step: key generation and Openshift secrets
+-- Drop table
+
+-- DROP TABLE opencrvs.birth_transactions;
+
+CREATE TABLE opencrvs.birth_transactions (
+	txn_id varchar(64) NOT NULL,
+	rid varchar(64) NULL,
+	status varchar(2048) NULL,
+	cr_by varchar(256) NOT NULL,
+	cr_dtimes timestamp NOT NULL,
+	upd_by varchar(256) NULL,
+	upd_dtimes timestamp NULL,
+	is_deleted bool NULL DEFAULT false,
+	del_dtimes timestamp NULL,
+	access_token varchar NULL,
+	opencrvs_brn varchar NULL,
+	CONSTRAINT pk_birth_txn_id PRIMARY KEY (txn_id)
+);
+
+-- opencrvs.uin_partner_token definition
+
+-- Drop table
+
+-- DROP TABLE opencrvs.uin_partner_token;
+
+CREATE TABLE opencrvs.uin_partner_token (
+	uin varchar(50) NOT NULL,
+	partner_token varchar(500) NULL,
+	cr_by varchar(50) NULL,
+	cr_dtimes timestamp NULL,
+	upd_by varchar(50) NULL,
+	upd_dtimes timestamp NULL,
+	partner_name varchar(56) NULL,
+	CONSTRAINT uin_partner_token_pkey PRIMARY KEY (uin)
+);
+
+```
+
+
+***Update database
+
+***Data Base : mosip_regprc
+Schema : regprc
+Table : transaction_type***
+
+```SQL
+  INSERT INTO regprc.transaction_type(
+  code, descr, lang_code, is_active, cr_by, cr_dtimes, upd_by, upd_dtimes, is_deleted, del_dtimes)
+  VALUES
+  ('OPENCRVS_NEW', 'OPENCRVS_NEW', 'eng', true, 'MOSIP_SYSTEM', CURRENT_TIMESTAMP, 'some_upd_by_value', CURRENT_TIMESTAMP, false, DEFAULT);
+```
+
+
+
+
+
+
+
+
+# Step : key generation and Openshift secrets
 
 ***keycloak certificate and secrets generation: (openshift cert )
 
-```
+```cert
 -----BEGIN CERTIFICATE-----
 MIIDaTCCAlGgAwIBAgIIV5uRrGpxP48wDQYJKoZIhvcNAQELBQAwJjEkMCIGA1UE
 AwwbaW5ncmVzcy1vcGVyYXRvckAxNzcwNzI5MTE2MB4XDTI2MDIxMDEzMTE1NloX
@@ -37,8 +94,9 @@ JX0mUMWkRty1nmHevgHOLsbwJTG7QAVaWLa2s7nTkxK2RGFfharJai45Ovm8kRtJ
 zGiCySLNc9vrQx7SgbqFi0qke7sNY49UbIvHPRwFxWtcwzBeMnKcbIKqLljZtlOI
 vm+UB9BFzqLmUq7zWQ==
 -----END CERTIFICATE-----
+```
 
-
+```bash
 keytool -importcert \
 -alias keycloak \
 -file keycloak.crt \
@@ -64,7 +122,7 @@ file path: /home/mosip/keycloak
 
 ***Opencrvs public and private key generation:
 
-```
+```bash
 create keys public & private :
 
 openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out mosip-priv.key
@@ -216,7 +274,7 @@ echo "👉 Root → Intermediate → Partner chain is valid"
 
 ---
 
-# Step: key cloak user and client creation
+# Step 3: key cloak user and client creation
 
 ***Create Opencrvs user and client
 Client : 
@@ -228,8 +286,19 @@ Add roles :
 		PUBLISH_CREDENTIAL_STATUS_UPDATE_GENERAL
 
 ---
+# Step 4: github config update
 
-# Step:  PMS create partner & policy 
+***Add in partner-management-mz.properties
+```GIT
+#Allowed credential types which partner can map against to policy
+pmp.allowed.credential.types=auth,qrcode,euin,reprint,opencrvs
+```
+
+
+---
+
+
+# Step 5:  PMS create partner & policy 
 
 ***To enable credential Issue
 
@@ -241,74 +310,23 @@ Upload the partner certificate for Opencrvs mosip mediatior to pms
 Upload Root CA , Intermediate CA , Partner certificate
 Received signed certificate
 Activate partner : status (approved)
-map the credentail type opencrvs to partner id by this api 
+map the credential type opencrvs to partner id by this api 
 ```URL
-
+POST https://partnermanagerurl/v1/partnermanager/partners/{partnerId}/credentialType/opencrvs/policies/{policyName}
 ```
 
 ---
 
-# Step: github config update
+
 
 ---
-# Step: Db creation and updates
-
-***Create data base : mosip_opencrvs
-Create schema : opencrvs
-Create Table : birth_transactions, uin_partner_token***
 
 
-```SQL
--- opencrvs.birth_transactions definition
+# Step 6: Openshift Deployment
 
--- Drop table
-
--- DROP TABLE opencrvs.birth_transactions;
-
-CREATE TABLE opencrvs.birth_transactions (
-	txn_id varchar(64) NOT NULL,
-	rid varchar(64) NULL,
-	status varchar(2048) NULL,
-	cr_by varchar(256) NOT NULL,
-	cr_dtimes timestamp NOT NULL,
-	upd_by varchar(256) NULL,
-	upd_dtimes timestamp NULL,
-	is_deleted bool NULL DEFAULT false,
-	del_dtimes timestamp NULL,
-	access_token varchar NULL,
-	opencrvs_brn varchar NULL,
-	CONSTRAINT pk_birth_txn_id PRIMARY KEY (txn_id)
-);
-
--- opencrvs.uin_partner_token definition
-
--- Drop table
-
--- DROP TABLE opencrvs.uin_partner_token;
-
-CREATE TABLE opencrvs.uin_partner_token (
-	uin varchar(50) NOT NULL,
-	partner_token varchar(500) NULL,
-	cr_by varchar(50) NULL,
-	cr_dtimes timestamp NULL,
-	upd_by varchar(50) NULL,
-	upd_dtimes timestamp NULL,
-	partner_name varchar(56) NULL,
-	CONSTRAINT uin_partner_token_pkey PRIMARY KEY (uin)
-);
-
-```
-
-
-***Update database
-
-***Data Base : mosip_regprc
-Schema : regprc
-Table : transaction_type***
-
-```SQL
-  INSERT INTO regprc.transaction_type(
-  code, descr, lang_code, is_active, cr_by, cr_dtimes, upd_by, upd_dtimes, is_deleted, del_dtimes)
-  VALUES
-  ('OPENCRVS_NEW', 'OPENCRVS_NEW', 'eng', true, 'MOSIP_SYSTEM', CURRENT_TIMESTAMP, 'some_upd_by_value', CURRENT_TIMESTAMP, false, DEFAULT);
-```
+***packet receiver stage
+packet uploader stage
+credential request generator
+uin generator stage
+opencrvs mediator
+regproc opencrvs stage***
