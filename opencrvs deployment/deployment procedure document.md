@@ -213,3 +213,12 @@ echo "👉 Root → Intermediate → Partner chain is valid"
 # Step: config file additions and changes
 ```
 
+# Step: key cloak user and client creation
+
+***Opencrvs user and client create
+
+# Step: upload credential cert to PMS
+
+***Upload the partner cert for iopencrvs mosip mediatior to pms
+
+# Step: github config update 
