@@ -286,7 +286,7 @@ Add roles :
 		PUBLISH_CREDENTIAL_STATUS_UPDATE_GENERAL
 
 ---
-# Step 4: github config update
+# Step 4: Git hub config update
 
 ***Add in partner-management-mz.properties
 ```GIT
@@ -306,11 +306,11 @@ pmp.allowed.credential.types=auth,qrcode,euin,reprint,opencrvs
 Create policy : mpolicy-default-opencrvs
 Publish/Activate policy :     status (PUBLISHED)
 Create partner : mpartner-default-opencrvs
-Upload the partner certificate for Opencrvs mosip mediatior to pms
+Upload the partner certificate for Opencrvs mosip mediator to PMS
 Upload Root CA , Intermediate CA , Partner certificate
 Received signed certificate
 Activate partner : status (approved)
-map the credential type opencrvs to partner id by this api 
+map the credential type opencrvs to partner id by this API 
 ```URL
 POST https://partnermanagerurl/v1/partnermanager/partners/{partnerId}/credentialType/opencrvs/policies/{policyName}
 ```
