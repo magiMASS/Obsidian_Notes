@@ -213,17 +213,26 @@ echo "👉 Root → Intermediate → Partner chain is valid"
 # Step: config file additions and changes
 ```
 
+
+---
+
 # Step: key cloak user and client creation
 
 ***Opencrvs user and client create
+
+---
 
 # Step:  PMS create partner & policy 
 
 create partner  mpartner-default-opencrvs
 ***Upload the partner cert for iopencrvs mosip mediatior to pms
 
+
+---
+
 # Step: github config update
 
+---
 # Step: Db creation and updates
 
 ***Create data base : mosip_opencrvs
@@ -273,3 +282,15 @@ CREATE TABLE opencrvs.uin_partner_token (
 ```
 
 
+***Update database
+
+***Data Base : mosip_regprc
+Schema : regprc
+Table : transaction_type***
+
+```SQL
+  INSERT INTO regprc.transaction_type(
+  code, descr, lang_code, is_active, cr_by, cr_dtimes, upd_by, upd_dtimes, is_deleted, del_dtimes)
+  VALUES
+  ('OPENCRVS_NEW', 'OPENCRVS_NEW', 'eng', true, 'MOSIP_SYSTEM', CURRENT_TIMESTAMP, 'some_upd_by_value', CURRENT_TIMESTAMP, false, DEFAULT);
+```
