@@ -218,15 +218,33 @@ echo "👉 Root → Intermediate → Partner chain is valid"
 
 # Step: key cloak user and client creation
 
-***Opencrvs user and client create
+***Create Opencrvs user and client
+Client : 
+		mpartner-default-opencrvs
+user :
+		mpartner-default-opencrvs
+Add roles :  
+		SUBSCRIBE_CREDENTIAL_ISSUED_INDIVIDUAL
+		PUBLISH_CREDENTIAL_STATUS_UPDATE_GENERAL
 
 ---
 
 # Step:  PMS create partner & policy 
 
-create partner  mpartner-default-opencrvs
-***Upload the partner cert for iopencrvs mosip mediatior to pms
+***To enable credential Issue
 
+***Create policy group : mpolicygroup-default-opencrvs
+Create policy : mpolicy-default-opencrvs
+Publish/Activate policy :     status (PUBLISHED)
+Create partner : mpartner-default-opencrvs
+Upload the partner certificate for Opencrvs mosip mediatior to pms
+Upload Root CA , Intermediate CA , Partner certificate
+Received signed certificate
+Activate partner : status (approved)
+map the credentail type opencrvs to partner id by this api 
+```URL
+
+```
 
 ---
 
