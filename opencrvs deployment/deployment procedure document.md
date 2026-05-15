@@ -1,9 +1,9 @@
-
 # Step1: Db creation and updates
 
 ***Create data base : mosip_opencrvs
 Create schema : opencrvs
 Create Table : birth_transactions, uin_partner_token***
+
 
 
 ```SQL
@@ -148,7 +148,13 @@ openssl pkcs12 -export \
 
 ```
 
+---
+
+
+
 ***Mosip Opencrvs mediator credential  partner certificate generation
+
+
 
 ```bash
 #!/bin/bash
@@ -296,6 +302,7 @@ pmp.allowed.credential.types=auth,qrcode,euin,reprint,opencrvs
 
 ***Add in application-mz.properties
 ```GIT
+
 packetmanager.default.priority=source:CNIE\/process:CORRECTION,source:REGISTRATION_CLIENT\/process:NEW|UPDATE|LOST,source:OPENCRVS\/process:OPENCRVS_NEW|OPENCRVS_DEATH,source:RESIDENT\/process:ACTIVATED|DEACTIVATED|RES_UPDATE|RES_REPRINT
 
 provider.packetreader.opencrvs=source:OPENCRVS,process:OPENCRVS_NEW|OPENCRVS_DEATH,classname:io.mosip.commons.packet.impl.PacketReaderImpl

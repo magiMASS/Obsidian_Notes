@@ -1,0 +1,8 @@
+.scrollcode pre {
+    max-height: 10px;
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: pre;
+    border: 1px solid var(--background-modifier-border);
+    padding: 10px;
+}

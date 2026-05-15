@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -195,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d47be64b5c4247b0",
+  "active": "9996368403998d63",
   "lastOpenFiles": [
     "code obfuscation/Code Obfuscation.md",
     "opencrvs deployment/deployment procedure document.md",
