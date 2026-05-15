@@ -2,16 +2,16 @@
 
 # Step1: Openshift Deployment
 
-packet receiver 
-packet uploader
+***packet receiver stage
+packet uploader stage
 credential request generator
-uin generator
+uin generator stage
 opencrvs mediator
-regproc opencrvs stage
+regproc opencrvs stage***
 
 
 
-# Step: key generation and assignment
+# Step: key generation and Openshift secrets
 
 ***keycloak certificate and secrets generation: (openshift cert )
 
@@ -92,6 +92,124 @@ openssl pkcs12 -export \
 
 ***Mosip Opencrvs mediator credential  partner certificate generation
 
+```bash
+#!/bin/bash
+
+# Clean previous setup (optional but recommended)
+rm -rf demoCA *.srl openssl.cnf
+
+# Set up directory structure for the CA
+mkdir -p demoCA/newcerts demoCA/private demoCA/certs
+touch demoCA/myindex demoCA/serial
+
+# Initialize serial
+echo 1000 > demoCA/serial
+echo > demoCA/myindex
+
+# Permissions (temporary; tighten later)
+chmod 777 demoCA demoCA/private demoCA/certs demoCA/newcerts
+
+# OpenSSL configuration
+cat <<EOL > openssl.cnf
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+dir               = ./demoCA
+certs             = \$dir/certs
+new_certs_dir     = \$dir/newcerts
+database          = \$dir/myindex
+private_key       = \$dir/private/cakey.pem
+serial            = \$dir/serial
+default_md        = sha256
+policy            = policy_any
+
+[ policy_any ]
+commonName = supplied
+
+# Root CA (self-signed)
+[ root_cert ]
+basicConstraints = CA:TRUE
+keyUsage = keyCertSign, cRLSign
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer:always
+
+# Intermediate CA
+[ intermediate_ca ]
+basicConstraints = CA:TRUE
+keyUsage = keyCertSign, cRLSign
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer:always
+
+# End entity / Partner cert
+[ usr_cert ]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer:always
+EOL
+
+# =========================
+# Step 1: Root CA
+# =========================
+echo "Generating Root CA..."
+openssl genpkey -algorithm RSA -out demoCA/private/rootCA.key
+openssl req -x509 -new -key demoCA/private/rootCA.key \
+  -out demoCA/certs/rootCA.crt \
+  -days 3650 \
+  -subj "/C=IN/ST=TamilNadu/L=Chennai/O=mpartner-default-opencrvs/CN=OpenCRVS Root CA" \
+  -extensions root_cert \
+  -config openssl.cnf
+
+# =========================
+# Step 2: Intermediate CA
+# =========================
+echo "Generating Intermediate CA..."
+openssl genpkey -algorithm RSA -out demoCA/private/intermediateCA.key
+openssl req -new -key demoCA/private/intermediateCA.key \
+  -out demoCA/newcerts/intermediateCA.csr \
+  -subj "/C=IN/ST=TamilNadu/L=Chennai/O=mpartner-default-opencrvs/CN=OpenCRVS Intermediate CA"
+
+openssl x509 -req \
+  -in demoCA/newcerts/intermediateCA.csr \
+  -CA demoCA/certs/rootCA.crt \
+  -CAkey demoCA/private/rootCA.key \
+  -CAcreateserial \
+  -out demoCA/certs/intermediateCA.crt \
+  -days 3650 \
+  -extensions intermediate_ca \
+  -extfile openssl.cnf
+
+# =========================
+# Step 3: Partner (Leaf)
+# =========================
+echo "Generating Partner Certificate..."
+openssl genpkey -algorithm RSA -out demoCA/private/partnerCA.key
+openssl req -new -key demoCA/private/partnerCA.key \
+  -out demoCA/newcerts/partnerCA.csr \
+  -subj "/C=IN/ST=TamilNadu/L=Chennai/O=mpartner-default-opencrvs/CN=OpenCRVS Partner CA"
+
+openssl x509 -req \
+  -in demoCA/newcerts/partnerCA.csr \
+  -CA demoCA/certs/intermediateCA.crt \
+  -CAkey demoCA/private/intermediateCA.key \
+  -CAcreateserial \
+  -out demoCA/certs/partnerCA.crt \
+  -days 3650 \
+  -extensions usr_cert \
+  -extfile openssl.cnf
+
+# =========================
+# Secure Permissions (FIXED)
+# =========================
+chmod 600 demoCA/private/*.key
+chmod 644 demoCA/certs/*.crt
+
+echo "✅ Certificates generated successfully!"
+echo "👉 Root → Intermediate → Partner chain is valid"
+
 # Step: key cloak user and client creation
 # Step: config file additions and changes
+```
 
