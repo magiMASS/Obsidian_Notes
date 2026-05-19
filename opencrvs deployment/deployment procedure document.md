@@ -68,10 +68,11 @@ Table : transaction_type***
 
 
 
-# Step : key generation and Openshift secrets
+# Step 2 : key generation and Openshift secrets
 
 ***keycloak certificate and secrets generation: (openshift cert )
 
+get the route cert from devops root and inter ca
 ```cert
 -----BEGIN CERTIFICATE-----
 MIIDaTCCAlGgAwIBAgIIV5uRrGpxP48wDQYJKoZIhvcNAQELBQAwJjEkMCIGA1UE
@@ -309,7 +310,7 @@ provider.packetreader.opencrvs=source:OPENCRVS,process:OPENCRVS_NEW|OPENCRVS_DEA
 
 provider.packetwriter.opencrvs=source:OPENCRVS,process:OPENCRVS_NEW|OPENCRVS_DEATH,classname:io.mosip.commons.packet.impl.PacketWriterImpl
 
-
+websub.base.url=http://websub-service.mosip.svc.cluster.local:9191
 ```
 
 ***Add in registration-processor-camel-routes-opencrvs_new-mz.xml
