@@ -630,12 +630,29 @@ POST https://partnermanagerurl/v1/partnermanager/partners/{partnerId}/credential
 
 # Step 6: Openshift Deployment
 
-Deployment    Image    tag     implementation
-registration-processor-registration-status-service mspeagle/registration-processor-registration-status-service
-registration-processor-packet-receiver-stage mspeagle/registration-processor-packet-receiver-stage
-registration-processor-securezone-notification-stage mspeagle/registration-processor-securezone-notification-stage
-registration-processor-packet-uploader mspeagle/regproc-packet-uploader-zambia
-idrepo-credential-request-generator mspeagle/credential-request-generator
-registration-processor-uin-generatormspeagle/uin-gen-zambia
-opencrvs-mediator mspeagle/opencrvs-mediator
-regproc-opencrvs-stage mspeagle/regproc-opencrvs-stage
+| Deployment                                           | Image                                                         | Tag                                         | Implementation                                                 |
+| ---------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------- |
+| registration-processor-registration-status-service   | mspeagle/registration-processor-registration-status-service   | zambia-21MAR2026                            | added logic to process opencrvs reg types                      |
+| registration-processor-packet-receiver-stage         | mspeagle/registration-processor-packet-receiver-stage         | zambia-21MAR2026-v1.2                       | added logic to process opencrvs reg types                      |
+| registration-processor-securezone-notification-stage | mspeagle/registration-processor-securezone-notification-stage | # zambia-23MAR2026                          | added logic to process opencrvs reg types                      |
+| registration-processor-packet-uploader               | mspeagle/regproc-packet-uploader-zambia                       | 24MAR2026                                   | added logic to process opencrvs reg types                      |
+| idrepo-credential-request-generator                  | mspeagle/credential-request-generator                         | 1.1.4.4-print-auth-batch-20DEC2025-MSP-v1.1 | seperated credential batches for print/auth and skipping locks |
+| registration-processor-uin-generator                 | mspeagle/uin-gen-zambia                                       | 24MAR2026                                   | added logic to process opencrvs reg types                      |
+| opencrvs-mediator                                    | mspeagle/opencrvs-mediator                                    | 10APR2026-v1.4                              | modified webhooks api request and opencrvs api call            |
+| regproc-opencrvs-stage                               | mspeagle/regproc-opencrvs-stage                               | 1.1.5-zambia-25MAR2026-v1.2                 | modified hazlecast version to support 1.1.5.5 release          |
+
+
+
+
+# Step 6: OpenShift Deployment
+
+| Deployment                                             | Image                                                           | Tag                                           | Implementation                                                |
+| ------------------------------------------------------ | --------------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------- |
+| `registration-processor-registration-status-service`   | `mspeagle/registration-processor-registration-status-service`   | `zambia-21MAR2026`                            | Added logic to process OpenCRVS registration types            |
+| `registration-processor-packet-receiver-stage`         | `mspeagle/registration-processor-packet-receiver-stage`         | `zambia-21MAR2026-v1.2`                       | Added logic to process OpenCRVS registration types            |
+| `registration-processor-securezone-notification-stage` | `mspeagle/registration-processor-securezone-notification-stage` | `zambia-23MAR2026`                            | Added logic to process OpenCRVS registration types            |
+| `registration-processor-packet-uploader`               | `mspeagle/regproc-packet-uploader-zambia`                       | `24MAR2026`                                   | Added logic to process OpenCRVS registration types            |
+| `idrepo-credential-request-generator`                  | `mspeagle/credential-request-generator`                         | `1.1.4.4-print-auth-batch-20DEC2025-MSP-v1.1` | Separated credential batches for print/auth and skipped locks |
+| `registration-processor-uin-generator`                 | `mspeagle/uin-gen-zambia`                                       | `24MAR2026`                                   | Added logic to process OpenCRVS registration types            |
+| `opencrvs-mediator`                                    | `mspeagle/opencrvs-mediator`                                    | `10APR2026-v1.4`                              | Modified webhook API requests and OpenCRVS API calls          |
+| `regproc-opencrvs-stage`                               | `mspeagle/regproc-opencrvs-stage`                               | `1.1.5-zambia-25MAR2026-v1.2`                 | Modified Hazelcast version to support `1.1.5.5` release       |
