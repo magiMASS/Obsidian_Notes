@@ -629,11 +629,13 @@ POST https://partnermanagerurl/v1/partnermanager/partners/{partnerId}/credential
 
 
 # Step 6: Openshift Deployment
-mspeagle/registration-processor-registration-status-service
-mspeagle/registration-processor-packet-receiver-stage
-***packet receiver stage
-packet uploader stage
-credential request generator
-uin generator stage
-opencrvs mediator
-regproc opencrvs stage***
+
+Deployment    Image    tag     implementation
+registration-processor-registration-status-service mspeagle/registration-processor-registration-status-service
+registration-processor-packet-receiver-stage mspeagle/registration-processor-packet-receiver-stage
+registration-processor-securezone-notification-stage mspeagle/registration-processor-securezone-notification-stage
+registration-processor-packet-uploader mspeagle/regproc-packet-uploader-zambia
+idrepo-credential-request-generator mspeagle/credential-request-generator
+registration-processor-uin-generatormspeagle/uin-gen-zambia
+opencrvs-mediator mspeagle/opencrvs-mediator
+regproc-opencrvs-stage mspeagle/regproc-opencrvs-stage
