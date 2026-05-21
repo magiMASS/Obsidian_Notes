@@ -629,7 +629,8 @@ POST https://partnermanagerurl/v1/partnermanager/partners/{partnerId}/credential
 
 
 # Step 6: Openshift Deployment
-
+mspeagle/registration-processor-registration-status-service
+mspeagle/registration-processor-packet-receiver-stage
 ***packet receiver stage
 packet uploader stage
 credential request generator
