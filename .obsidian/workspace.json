@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3d464e0b6e5d432b",
+        "id": "5c78376e0d004b97",
         "type": "tabs",
         "children": [
           {
-            "id": "5ceb891db721a33e",
+            "id": "914155d80560cb79",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -196,6 +196,7 @@
   },
   "active": "9996368403998d63",
   "lastOpenFiles": [
+    "biosdk-deployment/start sh.md",
     "code obfuscation/Code Obfuscation.md",
     "opencrvs deployment/deployment procedure document.md",
     "opencrvs deployment",
@@ -221,7 +222,6 @@
     "code obfuscation",
     "Untitled.md",
     "magesh project overview",
-    "biosdk-deployment/start sh.md",
     "biosdk-deployment/idemia license build Dockerfile.md",
     "biosdk-deployment/biosdk-Dockerfile.md",
     "biosdk-deployment/Biosdk Deployment on OpenShift.md",
