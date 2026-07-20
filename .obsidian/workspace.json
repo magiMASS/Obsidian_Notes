@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "code obfuscation/Maven_Setup_Guide.md",
+                "file": "nvidia api keys/NVIDIA API Keys.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Maven_Setup_Guide"
+              "title": "NVIDIA API Keys"
             }
           }
         ]
@@ -196,10 +196,12 @@
   },
   "active": "c13675643db01f70",
   "lastOpenFiles": [
+    "code obfuscation/Maven_Setup_Guide.md",
+    "nvidia api keys/NVIDIA API Keys.md",
+    "nvidia api keys",
     "code obfuscation/Deployment for Artifactory.md",
     "code obfuscation/Code Obfuscation.md",
     "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
-    "code obfuscation/Maven_Setup_Guide.md",
     "magesh project overview/project list.md",
     "opencrvs deployment/deployment procedure document.md",
     "biosdk-deployment/biosdk app deployment sample.md",
@@ -220,7 +222,6 @@
     "JUnit5/JUnit Annotationa & Assertions.md",
     "JUnit5/JUnit Mockito.md",
     "code obfuscation",
-    "Untitled.md",
     "magesh project overview",
     "biosdk-deployment/idemia license build Dockerfile.md",
     "biosdk-deployment/biosdk-Dockerfile.md",
@@ -231,8 +232,6 @@
     "JUnit5/Untitled 1.md",
     "JUnit5/Untitled.md",
     "JUnit5/Annotations.canvas",
-    "2026-03-04.md",
-    "Untitled.base",
-    "JUnit5"
+    "Untitled.base"
   ]
 }
