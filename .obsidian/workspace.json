@@ -11,10 +11,14 @@
             "id": "c13675643db01f70",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "magesh project overview/project list.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "project list"
             }
           }
         ]
