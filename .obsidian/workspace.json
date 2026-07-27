@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "magesh project overview/project list.md",
+                "file": "code obfuscation/Deployment for Artifactory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project list"
+              "title": "Deployment for Artifactory"
             }
           }
         ]
@@ -197,12 +197,12 @@
   "active": "c13675643db01f70",
   "lastOpenFiles": [
     "code obfuscation/Maven_Setup_Guide.md",
+    "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
+    "code obfuscation/Code Obfuscation.md",
+    "magesh project overview/project list.md",
     "nvidia api keys/NVIDIA API Keys.md",
     "nvidia api keys",
     "code obfuscation/Deployment for Artifactory.md",
-    "code obfuscation/Code Obfuscation.md",
-    "code obfuscation/Maven_Setup_Guide_Minimal_Obsidian (1).md",
-    "magesh project overview/project list.md",
     "opencrvs deployment/deployment procedure document.md",
     "biosdk-deployment/biosdk app deployment sample.md",
     "biosdk-deployment/start sh.md",
